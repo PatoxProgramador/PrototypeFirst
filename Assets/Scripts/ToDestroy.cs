@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ToDestroy : MonoBehaviour{
-
+    // selected list
     public static List<ToDestroy> moveableObject = new List<ToDestroy>();
-
+    // wheter is selected or not
     public bool isSelected;
-
+    // movement
     public float speed = 5f;
-
+ 
     private Vector3 target;
 
     void Start(){
@@ -20,7 +20,7 @@ public class ToDestroy : MonoBehaviour{
     }
 
     void Update(){
-
+        //movement of selected object
         if (Input.GetMouseButtonDown(1) && isSelected){
 
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -33,7 +33,7 @@ public class ToDestroy : MonoBehaviour{
     }
 
     public void OnMouseDown(){
-
+        // selection process
         isSelected = !isSelected;
 
         if (isSelected) {
@@ -47,7 +47,7 @@ public class ToDestroy : MonoBehaviour{
 
         }
         
-
+        // avoids multiple selections
         foreach (ToDestroy obj in moveableObject){
 
             if (obj != this){
