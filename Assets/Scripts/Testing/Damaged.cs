@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Damaged : MonoBehaviour
 {
 
     [SerializeField] float health, maxHealth = 100;
 
+    public Text visualHealth;
+
     private void Start()
     {
 
         health = maxHealth;
+
+        visualHealth.text = health.ToString();
 
     }
 
@@ -18,6 +23,7 @@ public class Damaged : MonoBehaviour
     {
 
         health -= damageAmount;
+        visualHealth.text = health.ToString();
             
         if (health <= 0)
         {
