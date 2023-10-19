@@ -7,7 +7,7 @@ public class Visualizer : MonoBehaviour
     public float chase;
     public float speed;
 
-    private float distance;
+    public static float distance;
 
     Opposing closestEnemy;
 

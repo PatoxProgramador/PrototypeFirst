@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && Visualizer.distance < 2)
         {
 
             Instantiate(bullet,transform.position, transform.rotation);
