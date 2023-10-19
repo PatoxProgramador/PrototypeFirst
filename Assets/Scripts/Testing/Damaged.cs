@@ -7,6 +7,7 @@ public class Damaged : MonoBehaviour
 {
 
     [SerializeField] float health, maxHealth = 100;
+    [SerializeField] private GameObject substitute;
 
     public Text visualHealth;
 
@@ -28,6 +29,7 @@ public class Damaged : MonoBehaviour
         if (health <= 0)
         {
 
+            Instantiate(substitute, transform.position, transform.rotation) ;
             Destroy(gameObject);
 
         }

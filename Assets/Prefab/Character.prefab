@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 100
+  substitute: {fileID: 7649220099133754419, guid: 1d1b10161f064d3479cee88c6c881a01, type: 3}
   visualHealth: {fileID: 7053235439550655169}
 --- !u!1 &3729656232868321373
 GameObject:

@@ -47,11 +47,11 @@ public class Sucker : MonoBehaviour
 
         flag = false;
 
-        if (AIChase.distance < AIChase.following)
+        if (Visualizer.distance < Visualizer.following)
         {
             yield return new WaitForSeconds(time);
 
-            if (AIChase.distance < AIChase.following)
+            if (Visualizer.distance < Visualizer.following)
             {
 
                 //print("NOT MOVING");
@@ -72,7 +72,7 @@ public class Sucker : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f);
 
-                if (AIChase.distance < AIChase.following)
+                if (Visualizer.distance < Visualizer.following)
                 {
 
                     flag = true;

@@ -8,12 +8,16 @@ public class Visualizer : MonoBehaviour
     public float speed;
     public float shot;
 
+    public static float following;
+
     public static float distance;
 
     Opposing closestEnemy;
 
     void Start()
     {
+
+        following = shot;
         
     }
 
