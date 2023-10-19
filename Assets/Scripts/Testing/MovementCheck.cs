@@ -14,11 +14,17 @@ public class MovementCheck : MonoBehaviour
     public float speed = 5f;
     public float wait;
 
+    bool flag  = false;
+
     void Start()
     {
 
         target = transform.position;
-        
+
+        StartCoroutine(Timer(wait));
+
+        flag = false;
+
     }
     void Update()
     {
@@ -35,19 +41,19 @@ public class MovementCheck : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
-        StartCoroutine(Timer(wait));
-
     }
 
     IEnumerator Timer(float time)
     {
 
-        if (distance < 1)
+        flag = false;
+
+        if (distance < 0.1)
         {
 
             yield return new WaitForSeconds(time);
 
-            if (distance < 1)
+            if (distance < 0.1)
             {
 
                 print("NOT MOVING");
@@ -56,11 +62,29 @@ public class MovementCheck : MonoBehaviour
             else
             {
 
-                StartCoroutine(Timer(time));
+            }
+
+        }
+        else
+        {
+
+            while (!flag)
+            {
+
+                yield return new WaitForSeconds(0.5f);
+
+                if (distance < 0.1)
+                {
+
+                    flag = true;
+
+                }
 
             }
 
         }
+
+        StartCoroutine(Timer(wait));
 
     }
 
