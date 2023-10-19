@@ -5,16 +5,20 @@ using UnityEngine;
 public class Damaged : MonoBehaviour
 {
 
-    public float health;
+    [SerializeField] float health, maxHealth = 100;
 
-    void Start()
+    private void Start()
     {
+
+        health = maxHealth;
 
     }
 
-    void Update()
+    public void TakeDamage(float damageAmount)
     {
 
+        health -= damageAmount;
+            
         if (health <= 0)
         {
 

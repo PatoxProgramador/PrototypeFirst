@@ -50,7 +50,7 @@ public class ToDestroy : MonoBehaviour{
         // avoids multiple selections
         foreach (ToDestroy obj in moveableObject){
 
-            if (obj != this){
+            if (obj != this && obj != null){
 
                 obj.isSelected = false;
                 obj.gameObject.GetComponent<SpriteRenderer>().color = Color.white;

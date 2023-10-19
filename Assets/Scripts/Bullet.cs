@@ -19,19 +19,20 @@ public class Bullet : MonoBehaviour
     {
 
         transform.Translate(Vector3.right * speed * Time.deltaTime);
-
         
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && collision.gameObject.TryGetComponent<Damaged>(out Damaged enemy))
         {
 
-            Destroy(gameObject);
+            enemy.TakeDamage(10);
 
         }
+
+        Destroy(gameObject);
 
     }
 
