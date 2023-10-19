@@ -7,26 +7,20 @@ public class Damaged : MonoBehaviour
 
     public float health;
 
-    public static float injured;
-
     void Start()
     {
-
-        injured = health;
 
     }
 
     void Update()
     {
 
-        if (injured <= 0)
+        if (health <= 0)
         {
 
             Destroy(gameObject);
 
         }
-
-        health = injured;
         
     }
 

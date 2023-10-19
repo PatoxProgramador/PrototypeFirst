@@ -22,7 +22,12 @@ public class Visualizer : MonoBehaviour
 
         FindClosestEnemy();
 
-        Rotator();
+        if (closestEnemy != null)
+        {
+
+            Rotator();
+
+        }
 
     }
 

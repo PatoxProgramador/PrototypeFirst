@@ -31,8 +31,6 @@ public class Bullet : MonoBehaviour
 
             Destroy(gameObject);
 
-            Damaged.injured -= 10;
-
         }
 
     }
