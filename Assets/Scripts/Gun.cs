@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour
 {
 
     public GameObject bullet;
+    public float shot;
 
 
     void Start()
@@ -16,7 +17,7 @@ public class Gun : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && Visualizer.distance < 2)
+        if (Input.GetKeyDown(KeyCode.Space) && Visualizer.distance < shot)
         {
 
             Instantiate(bullet,transform.position, transform.rotation);
