@@ -6,6 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
+    public float speed;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
 
-        
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
         
     }
 
