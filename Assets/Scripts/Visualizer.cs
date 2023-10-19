@@ -8,6 +8,8 @@ public class Visualizer : MonoBehaviour
 
     private float distance;
 
+    Opposing closestEnemy;
+
     void Start()
     {
         
@@ -18,6 +20,8 @@ public class Visualizer : MonoBehaviour
 
         FindClosestEnemy();
 
+        Rotator();
+
     }
 
     void FindClosestEnemy()
@@ -25,7 +29,7 @@ public class Visualizer : MonoBehaviour
 
         float distanceToClosestEnemy = Mathf.Infinity;
 
-        Opposing closestEnemy = null;
+        closestEnemy = null;
 
         Opposing[] allEnemies = GameObject.FindObjectsOfType<Opposing>();
 
@@ -43,6 +47,13 @@ public class Visualizer : MonoBehaviour
             }
 
         }
+
+        //Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+
+    }
+
+    void Rotator()
+    {
         // code taken from AI chase
         distance = Vector2.Distance(transform.position, closestEnemy.transform.position);
 
@@ -57,8 +68,6 @@ public class Visualizer : MonoBehaviour
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
 
         }
-
-        //Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
 
     }
 
