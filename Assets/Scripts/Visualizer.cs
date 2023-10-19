@@ -5,6 +5,7 @@ using UnityEngine;
 public class Visualizer : MonoBehaviour
 {
     public float chase;
+    public float speed;
 
     private float distance;
 
@@ -64,6 +65,19 @@ public class Visualizer : MonoBehaviour
 
         if (distance < chase)
         {
+
+            if (distance < 2)
+            {
+
+
+
+            }
+            else
+            {
+
+                transform.position = Vector2.MoveTowards(this.transform.position, closestEnemy.transform.position, speed * Time.deltaTime);
+
+            }
 
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
 
