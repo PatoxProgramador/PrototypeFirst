@@ -53,10 +53,11 @@ public class MovementCheck : MonoBehaviour
 
             yield return new WaitForSeconds(time);
 
-            if (distance < 0.1)
+            if (distance < 0.1 && gameObject.TryGetComponent<Damaged>(out Damaged enemy))
             {
 
-                print("NOT MOVING");
+                //print("NOT MOVING");
+                enemy.TakeDamage(10f);
 
             }
             else
