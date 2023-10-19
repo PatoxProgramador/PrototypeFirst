@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class ToDestroy : MonoBehaviour{
     // selected list
@@ -12,15 +13,28 @@ public class ToDestroy : MonoBehaviour{
  
     private Vector3 target;
 
+    private float distance;
+
+    bool flag;
+
+    public float wait;
+
     void Start(){
 
         moveableObject.Add(this);
         target = transform.position;
-        
+
+        StartCoroutine(MovementCheck(wait));
+
+        flag = false;
+
     }
 
     void Update(){
         //movement of selected object
+
+        distance = Vector2.Distance(transform.position, target);
+
         if (Input.GetMouseButtonDown(1) && isSelected){
 
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -58,6 +72,50 @@ public class ToDestroy : MonoBehaviour{
             }
 
         }
+    }
+
+    IEnumerator MovementCheck( float time)
+    {
+
+        flag = false;
+
+        if (distance < 0.1)
+        {
+
+            yield return new WaitForSeconds(time);
+
+            if (distance < 0.1 && gameObject.TryGetComponent<Damaged>(out Damaged enemy))
+            {
+
+                //print("NOT MOVING");
+                enemy.TakeDamage(10f);
+
+            }
+            else
+            {
+            }
+
+        }
+        else
+        {
+
+            while (!flag)
+            {
+
+                yield return new WaitForSeconds(0.5f);
+
+                if (distance < 0.1)
+                {
+
+                    flag = true;
+
+                }
+
+            }
+
+        }
+
+        StartCoroutine(MovementCheck(wait));
 
     }
 
