@@ -17,7 +17,7 @@ public class KeyBoardMovement : MonoBehaviour{
         float x = Input.GetAxisRaw("Horizontal") * playerSpeed * Time.deltaTime;
         float y = Input.GetAxisRaw("Vertical") * playerSpeed * Time.deltaTime;
 
-        transform.Translate(x,y,0);
+        transform.Translate(-y,x,0);
 
     }
 
