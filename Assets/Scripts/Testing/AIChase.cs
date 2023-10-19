@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class AIChase : MonoBehaviour{
     //target
-    GameObject player;
+    public GameObject player;
     //chasing variables
     public float chase;
-    private float distance;
+    public float speed;
+    public static float following;
+    public static float distance;
 
     void Start(){
-        
 
+        following = chase;
 
     }
  
@@ -27,7 +29,7 @@ public class AIChase : MonoBehaviour{
         if (distance < chase){
 
             //moving and rotation to target
-            //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, chase * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
 
         }
