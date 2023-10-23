@@ -15,7 +15,7 @@ public class ChangeScene : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void changeScene()
