@@ -330,6 +330,8 @@ MonoBehaviour:
   chase: 4
   speed: 1.5
   shot: 3
+  distance: 0
+  allEnemies: []
 --- !u!114 &5794413140980270620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +348,7 @@ MonoBehaviour:
   maxHealth: 100
   visualHealth: {fileID: 3083170019827628680}
   wait: 1.2
+  hi: {fileID: 8296316158394027052}
 --- !u!1 &8056950082612429094
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,3 +395,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4776684685144479911, guid: 895c637cab48f3c4dad2b30b080cc62c, type: 3}
   time: 0.75
+  available: 0
+  hi: {fileID: 8296316158394027052}

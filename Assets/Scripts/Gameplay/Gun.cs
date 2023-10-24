@@ -12,6 +12,8 @@ public class Gun : MonoBehaviour
 
     public bool available;
 
+    public Visualizer hi;
+
     void Start()
     {
 
@@ -24,7 +26,7 @@ public class Gun : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && Visualizer.distance < Visualizer.following && available)
+        if (Input.GetKeyDown(KeyCode.Space) && hi.distance < hi.shot && available)
         {
 
             Instantiate(bullet,transform.position, transform.rotation);
@@ -53,7 +55,7 @@ public class Gun : MonoBehaviour
 
                 yield return new WaitForSeconds(0.1f);
 
-                if (Input.GetKeyDown(KeyCode.Space) && Visualizer.distance < Visualizer.following && available)
+                if (Input.GetKeyDown(KeyCode.Space) && hi.distance < hi.shot && available)
                 {
 
                     available = false;

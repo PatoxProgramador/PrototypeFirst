@@ -16,6 +16,8 @@ public class Sucker : MonoBehaviour
 
     bool flag = false;
 
+    public Visualizer hi;
+
     private void Start()
     {
 
@@ -47,11 +49,11 @@ public class Sucker : MonoBehaviour
 
         flag = false;
 
-        if (Visualizer.distance < Visualizer.following)
+        if (hi.distance < hi.shot)
         {
             yield return new WaitForSeconds(time);
 
-            if (Visualizer.distance < Visualizer.following)
+            if (hi.distance < hi.shot)
             {
 
                 //print("NOT MOVING");
@@ -72,7 +74,7 @@ public class Sucker : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f);
 
-                if (Visualizer.distance < Visualizer.following)
+                if (hi.distance < hi.shot)
                 {
 
                     flag = true;

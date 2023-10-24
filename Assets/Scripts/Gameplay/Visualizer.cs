@@ -7,10 +7,8 @@ public class Visualizer : MonoBehaviour
     public float chase;
     public float speed;
     public float shot;
-    //problem of asset communication
-    public static float following;
 
-    public static float distance;
+    public float distance;
 
     Opposing closestEnemy;
 
@@ -18,8 +16,6 @@ public class Visualizer : MonoBehaviour
 
     void Start()
     {
-
-        following = shot;
         
     }
 
