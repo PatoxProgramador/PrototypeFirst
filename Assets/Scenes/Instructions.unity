@@ -307,7 +307,7 @@ MonoBehaviour:
     press it and \nyou'll shoot some balls ;)\n4-The objective if for each team to
     eliminate the other one\n5- The white guys lose health weather they are idle
     for a while or shot, while the red guys lose\nhealth when they are a certain
-    distance from the white characters"
+    distance from the white characters\n6-Press escape to pause the game"
 --- !u!222 &1467189753
 CanvasRenderer:
   m_ObjectHideFlags: 0
