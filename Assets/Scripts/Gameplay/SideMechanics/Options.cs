@@ -35,7 +35,20 @@ public class Options : MonoBehaviour
 
         optionsMenu.SetActive(false);
 
-        Time.timeScale = 1f;
+        if (Pause.frozen.activeSelf) 
+        {
+
+            Time.timeScale = 0f;
+
+        }
+        else
+        {
+
+            Time.timeScale = 1f;
+
+        }
+
+        
 
     }
 

@@ -10,6 +10,7 @@ public class Pause : MonoBehaviour
     public static bool pause = false;
 
     public GameObject pauseMenu;
+    public static GameObject frozen;
 
     void Start()
     {
@@ -42,6 +43,8 @@ public class Pause : MonoBehaviour
             }
 
         }
+
+        frozen = pauseMenu;
         
     }
 
