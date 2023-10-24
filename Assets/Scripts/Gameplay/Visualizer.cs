@@ -7,12 +7,14 @@ public class Visualizer : MonoBehaviour
     public float chase;
     public float speed;
     public float shot;
-
+    //problem of asset communication
     public static float following;
 
     public static float distance;
 
     Opposing closestEnemy;
+
+    public Opposing[] allEnemies;
 
     void Start()
     {
@@ -42,7 +44,7 @@ public class Visualizer : MonoBehaviour
 
         closestEnemy = null;
 
-        Opposing[] allEnemies = GameObject.FindObjectsOfType<Opposing>();
+        allEnemies = GameObject.FindObjectsOfType<Opposing>();
 
         foreach (Opposing currentEnemy in allEnemies)
         {

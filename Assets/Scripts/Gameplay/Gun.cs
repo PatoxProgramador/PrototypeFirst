@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour
     public GameObject bullet;
     public float time;
 
-    private bool available;
+    public bool available;
 
     void Start()
     {
