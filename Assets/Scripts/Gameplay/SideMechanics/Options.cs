@@ -12,8 +12,6 @@ public class Options : MonoBehaviour
 
         optionsMenu.SetActive(false);
 
-        Time.timeScale = 1.0f;
-
     }
 
     void Update()
@@ -26,7 +24,6 @@ public class Options : MonoBehaviour
 
         optionsMenu.SetActive(true);
 
-        Time.timeScale = 0f;
 
     }
 
@@ -34,21 +31,14 @@ public class Options : MonoBehaviour
     {
 
         optionsMenu.SetActive(false);
-
-        if (Pause.frozen.activeSelf) 
-        {
-
-            Time.timeScale = 0f;
-
-        }
-        else
-        {
-
-            Time.timeScale = 1f;
-
-        }
-
         
+
+    }
+
+    public void SetQuality(int qualityIndex)
+    {
+
+        QualitySettings.SetQualityLevel(qualityIndex);
 
     }
 
