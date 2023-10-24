@@ -51,7 +51,7 @@ public class Gun : MonoBehaviour
             while (available)
             {
 
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.1f);
 
                 if (Input.GetKeyDown(KeyCode.Space) && Visualizer.distance < Visualizer.following && available)
                 {
