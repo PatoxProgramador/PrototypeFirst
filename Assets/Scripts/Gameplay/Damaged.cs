@@ -30,6 +30,7 @@ public class Damaged : MonoBehaviour
         {
 
             Instantiate(substitute, transform.position, transform.rotation) ;
+
             Destroy(gameObject);
 
         }

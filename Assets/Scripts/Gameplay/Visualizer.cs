@@ -14,8 +14,16 @@ public class Visualizer : MonoBehaviour
 
     public Opposing[] allEnemies;
 
+    AudioSource clicked;
+
+    public AudioClip variety;
+
     void Start()
     {
+
+        clicked = GetComponent<AudioSource>();
+
+        clicked.PlayOneShot(variety);
         
     }
 

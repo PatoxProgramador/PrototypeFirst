@@ -14,6 +14,10 @@ public class Gun : MonoBehaviour
 
     public Visualizer hi;
 
+    public AudioSource clicked;
+
+    public AudioClip variety;
+
     void Start()
     {
 
@@ -30,6 +34,8 @@ public class Gun : MonoBehaviour
         {
 
             Instantiate(bullet,transform.position, transform.rotation);
+
+            clicked.PlayOneShot(variety);
 
             available = false;
 

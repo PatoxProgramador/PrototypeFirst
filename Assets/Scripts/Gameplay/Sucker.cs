@@ -18,8 +18,14 @@ public class Sucker : MonoBehaviour
 
     public Visualizer hi;
 
+    AudioSource clicked;
+
+    public AudioClip variety;
+
     private void Start()
     {
+
+        clicked = GetComponent<AudioSource>();
 
         health = maxHealth;
 
@@ -58,6 +64,8 @@ public class Sucker : MonoBehaviour
 
                 //print("NOT MOVING");
                 TakeDamage(10f);
+
+                clicked.PlayOneShot(variety);
 
             }
             else
