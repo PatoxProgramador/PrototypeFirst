@@ -7,6 +7,8 @@ public class Options : MonoBehaviour
 
     public GameObject optionsMenu;
 
+    public AudioSource buttons;
+
     void Start()
     {
 
@@ -24,6 +26,7 @@ public class Options : MonoBehaviour
 
         optionsMenu.SetActive(true);
 
+        buttons.Play();
 
     }
 
@@ -31,7 +34,8 @@ public class Options : MonoBehaviour
     {
 
         optionsMenu.SetActive(false);
-        
+
+        buttons.Play();
 
     }
 

@@ -11,6 +11,8 @@ public class Pause : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    public AudioSource buttons;
+
     void Start()
     {
 
@@ -28,13 +30,8 @@ public class Pause : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
 
-            if (pause)
-            {
-
-                Resume();
-
-            }
-            else
+            
+            if(!pause)
             {
 
                 Paused();
@@ -50,6 +47,8 @@ public class Pause : MonoBehaviour
 
         pause = false;
 
+        buttons.Play();
+
         pauseMenu.SetActive(false);
 
         Time.timeScale = 1.0f;
@@ -59,6 +58,8 @@ public class Pause : MonoBehaviour
     {
 
         pause = true;
+
+        buttons.Play();
 
         pauseMenu.SetActive(true);
 
@@ -70,6 +71,8 @@ public class Pause : MonoBehaviour
     {
 
         pause = false;
+
+        buttons.Play();
 
         pauseMenu.SetActive(false);
 

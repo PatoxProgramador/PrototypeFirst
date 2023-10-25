@@ -22,7 +22,7 @@ public class Next : MonoBehaviour
         party = dJ.GetComponents<AudioSource>();
 
         party[0].volume = 0f;
-        party[1].volume = 1f;
+        party[1].volume = 0.2f;
 
         StartCoroutine(Timer(time));
         

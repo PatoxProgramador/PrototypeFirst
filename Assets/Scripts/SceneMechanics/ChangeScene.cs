@@ -12,6 +12,8 @@ public class ChangeScene : MonoBehaviour
 
     public AudioSource[] party = new AudioSource[2];
 
+    public AudioSource buttons;
+
     void Start()
     {
 
@@ -22,7 +24,7 @@ public class ChangeScene : MonoBehaviour
         if (sceneName.Equals("Instructions") || sceneName.Equals("StartScene"))
         {
 
-            party[0].volume = 1f;
+            party[0].volume = 0.2f;
             party[1].volume = 0f;
 
 
@@ -38,12 +40,16 @@ public class ChangeScene : MonoBehaviour
     public void changeScene()
     {
 
+        buttons.Play();
+
         SceneManager.LoadScene(sceneName);
 
     }
 
     public void QuitGame()
     {
+
+        buttons.Play();
 
         Application.Quit();
 
