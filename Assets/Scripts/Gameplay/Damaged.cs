@@ -11,8 +11,14 @@ public class Damaged : MonoBehaviour
 
     public Text visualHealth;
 
+    AudioSource clicked;
+
+    public AudioClip variety;
+
     private void Start()
     {
+
+        clicked = GetComponent<AudioSource>();
 
         health = maxHealth;
 
@@ -25,6 +31,8 @@ public class Damaged : MonoBehaviour
 
         health -= damageAmount;
         visualHealth.text = health.ToString();
+
+        clicked.PlayOneShot(variety);
             
         if (health <= 0)
         {

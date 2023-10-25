@@ -351,7 +351,9 @@ MonoBehaviour:
   visualHealth: {fileID: 3083170019827628680}
   wait: 1.2
   hi: {fileID: 8296316158394027052}
-  variety: {fileID: 8300000, guid: 80fc68faced5da44289a2abc916d4c3a, type: 3}
+  variety:
+  - {fileID: 8300000, guid: 80fc68faced5da44289a2abc916d4c3a, type: 3}
+  - {fileID: 8300000, guid: 14007df919c75944bb01d79df899255d, type: 3}
 --- !u!82 &3221344606839881466
 AudioSource:
   m_ObjectHideFlags: 0

@@ -207,7 +207,7 @@ MonoBehaviour:
   maxHealth: 100
   substitute: {fileID: 7649220099133754419, guid: 1d1b10161f064d3479cee88c6c881a01, type: 3}
   visualHealth: {fileID: 7053235439550655169}
-  variety: {fileID: 8300000, guid: 6f626957ae8952c46990950210c082dd, type: 3}
+  variety: {fileID: 8300000, guid: f638cdbba7ad6e048bb7842e1055c466, type: 3}
 --- !u!82 &8660322928575491957
 AudioSource:
   m_ObjectHideFlags: 0

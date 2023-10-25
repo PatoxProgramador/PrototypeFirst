@@ -20,7 +20,7 @@ public class Sucker : MonoBehaviour
 
     AudioSource clicked;
 
-    public AudioClip variety;
+    public AudioClip[]variety = new AudioClip[2];
 
     private void Start()
     {
@@ -44,7 +44,7 @@ public class Sucker : MonoBehaviour
         if (health <= 0)
         {
 
-            Destroy(gameObject);
+            StartCoroutine(Vanished());
 
         }
 
@@ -65,7 +65,7 @@ public class Sucker : MonoBehaviour
                 //print("NOT MOVING");
                 TakeDamage(10f);
 
-                clicked.PlayOneShot(variety);
+                clicked.PlayOneShot(variety[0]);
 
             }
             else
@@ -94,6 +94,17 @@ public class Sucker : MonoBehaviour
         }
 
         StartCoroutine(Draining(wait));
+
+    }
+
+    IEnumerator Vanished()
+    {
+
+        clicked.PlayOneShot(variety[1]);
+
+        yield return new WaitForSeconds(0.1f);
+
+        Destroy(gameObject);
 
     }
 
