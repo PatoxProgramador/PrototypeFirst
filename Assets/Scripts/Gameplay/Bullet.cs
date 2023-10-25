@@ -8,8 +8,14 @@ public class Bullet : MonoBehaviour
 
     public float speed;
 
+    AudioSource clicked;
+
+    public AudioClip variety;
+
     void Start()
     {
+
+       clicked = GetComponent<AudioSource>();
 
         Destroy(gameObject,1f);
 
@@ -29,8 +35,18 @@ public class Bullet : MonoBehaviour
         {
 
             enemy.TakeDamage(10);
+            clicked.PlayOneShot(variety);
 
         }
+
+        StartCoroutine(Vanished());
+
+    }
+
+    IEnumerator Vanished()
+    {
+
+        yield return new WaitForSeconds(0.1f);
 
         Destroy(gameObject);
 
