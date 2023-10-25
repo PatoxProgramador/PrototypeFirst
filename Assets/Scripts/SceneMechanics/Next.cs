@@ -10,8 +10,19 @@ public class Next : MonoBehaviour
 
     public float time;
 
+    public GameObject dJ;
+
+    public AudioSource[] party = new AudioSource[2];
+
     void Start()
     {
+
+        dJ = GameObject.FindGameObjectWithTag("Music");
+
+        party = dJ.GetComponents<AudioSource>();
+
+        party[0].volume = 0f;
+        party[1].volume = 1f;
 
         StartCoroutine(Timer(time));
         
