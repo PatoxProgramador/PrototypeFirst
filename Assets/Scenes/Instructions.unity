@@ -304,11 +304,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "1-There are 2 teams; red squares and white squares\n\n2- The white team
-    plays with the mouse and the red team plays with the \nspacebar\n\n3- With the
-    mouse you got to left click the character you want to use \n(which will turn
+  m_Text: "1-There are 2 teams; RIPD (cowboys) and the deados (skulls)\n\n2- The
+    deados plays with the mouse and the cowboys plays with the \nspacebar\n\n3- With
+    the mouse you got to left click the character you want to use \n(which will turn
     green) and right click where you want to move, while \nwith the spacebar, you
-    just... well... press it and you'll shoot some balls \n;)\n\n4-The objective
+    just... well... press it and you'll shoot some \nbullets ;)\n\n4-The objective
     if for each team to eliminate the other one\n\n5- The white guys lose health
     wether they are idle for a while or shot, \nwhile the red guys lose health when
     they are a certain distance from \nthe white characters\n\n6-Press escape to

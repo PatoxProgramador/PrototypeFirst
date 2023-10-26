@@ -29,7 +29,7 @@ public class Result : MonoBehaviour
             if (allEnemies.Length < 1)
         {
 
-            result = "Red wins";
+            result = "RIPD wins";
 
             changeScene();
 
@@ -38,7 +38,7 @@ public class Result : MonoBehaviour
         else if (allAllies.Length < 1)
         {
 
-            result = "White wins";
+            result = "Deados wins";
 
             changeScene();
 

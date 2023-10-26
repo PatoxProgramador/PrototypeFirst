@@ -16,7 +16,7 @@ public class Background : MonoBehaviour
         
         fondo = GetComponent<Image>();
 
-        if (Result.result.Equals("Red wins"))
+        if (Result.result.Equals("RIPD wins"))
         {
 
             fondo.sprite = side[1];
@@ -24,7 +24,7 @@ public class Background : MonoBehaviour
             change.color = Color.red;
 
         }
-        else if (Result.result.Equals("White wins"))
+        else if (Result.result.Equals("Deados wins"))
         {
 
             fondo.sprite = side[0];
