@@ -9,11 +9,12 @@ public class Damaged : MonoBehaviour
     [SerializeField] float health, maxHealth = 100;
     [SerializeField] private GameObject substitute;
 
-    public Text visualHealth;
 
     AudioSource clicked;
 
     public AudioClip variety;
+
+    public Slider slider;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class Damaged : MonoBehaviour
 
         health = maxHealth;
 
-        visualHealth.text = health.ToString();
+        slider.value = health;
 
     }
 
@@ -30,7 +31,7 @@ public class Damaged : MonoBehaviour
     {
 
         health -= damageAmount;
-        visualHealth.text = health.ToString();
+        slider.value = health;
 
         clicked.PlayOneShot(variety);
             

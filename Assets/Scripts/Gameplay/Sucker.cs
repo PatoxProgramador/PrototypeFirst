@@ -10,7 +10,7 @@ public class Sucker : MonoBehaviour
 
    [SerializeField] float health, maxHealth = 100;
 
-    public Text visualHealth;
+    public Slider slider;
 
     public float wait;
 
@@ -28,8 +28,7 @@ public class Sucker : MonoBehaviour
         clicked = GetComponent<AudioSource>();
 
         health = maxHealth;
-
-        visualHealth.text = health.ToString();
+        slider.value = health;
 
         StartCoroutine(Draining(wait));
 
@@ -39,7 +38,8 @@ public class Sucker : MonoBehaviour
     {
 
         health -= damageAmount;
-        visualHealth.text = health.ToString();
+        
+        slider.value = health;
 
         if (health <= 0)
         {
