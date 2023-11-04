@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: GamePlay
-  time: 5
+  time: 20
   dJ: {fileID: 0}
   party:
   - {fileID: 0}
@@ -304,15 +304,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "1-There are 2 teams; RIPD (cowboys) and the deados (skulls)\n\n2- The
-    deados plays with the mouse and the cowboys plays with the \nspacebar\n\n3- With
-    the mouse you got to left click the character you want to use \n(which will turn
-    green) and right click where you want to move, while \nwith the spacebar, you
-    just... well... press it and you'll shoot some \nbullets ;)\n\n4-The objective
-    if for each team to eliminate the other one\n\n5- The white guys lose health
-    wether they are idle for a while or shot, \nwhile the red guys lose health when
-    they are a certain distance from \nthe white characters\n\n6-Press escape to
-    pause the game"
+  m_Text: "There are 2 teams;\nRIPD (cowboys) and the deados (skulls)\n\nDeados:
+    \n1-plays with mouse\n2-left click character you want to use (will turn green)
+    \n3-right click where you want to move\n\ntry to avoid getting shot or having
+    an idle piece\n\nCowboys:\n1- plays with spacebar to shoot bullets\n\ntry to
+    avoid having your piece follow the deados for a long time\n\nIt ends until the
+    other team is eliminated\n\nPress escape to pause in game"
 --- !u!222 &1467189753
 CanvasRenderer:
   m_ObjectHideFlags: 0
