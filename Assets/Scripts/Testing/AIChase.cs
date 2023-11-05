@@ -8,12 +8,9 @@ public class AIChase : MonoBehaviour{
     //chasing variables
     public float chase;
     public float speed;
-    public static float following;
     public static float distance;
 
     void Start(){
-
-        following = chase;
 
     }
  
@@ -26,7 +23,7 @@ public class AIChase : MonoBehaviour{
         //angle to look at target
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        if (distance < chase){
+        if (distance > chase){
 
             //moving and rotation to target
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
