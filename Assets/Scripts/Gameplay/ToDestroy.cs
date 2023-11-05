@@ -23,6 +23,8 @@ public class ToDestroy : MonoBehaviour{
 
     public AudioClip [] variety = new AudioClip[2];
 
+    Visualizer freeze;
+
     void Start(){
 
         clicked = GetComponent<AudioSource>();
@@ -126,6 +128,38 @@ public class ToDestroy : MonoBehaviour{
         }
 
         StartCoroutine(MovementCheck(wait));
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag == "Cowboy")
+        {
+
+            freeze = collision.gameObject.GetComponent<Visualizer>();
+
+            StartCoroutine(Freezer(collision.gameObject));
+
+        }
+
+    }
+
+    IEnumerator Freezer(GameObject a)
+    {
+
+        freeze.enabled = false;
+
+        yield return new WaitForSeconds(3f);
+
+        if (a != null)
+        {
+
+            freeze.enabled = true;
+
+        }
+
+       
 
     }
 

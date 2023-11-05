@@ -34,12 +34,12 @@ public class KeyMovement : MonoBehaviour
 
             a = collision.gameObject.GetComponent<AIChase>();
 
-            StartCoroutine(b());
+            StartCoroutine(b());    
 
         }
 
     }
-
+    
     IEnumerator b()
     {
 
