@@ -151,7 +151,9 @@ MonoBehaviour:
   isSelected: 0
   speed: 5
   wait: 3
-  variety: {fileID: 8300000, guid: eae0a2ad4723a674e8b4869b42eaa947, type: 3}
+  variety:
+  - {fileID: 8300000, guid: eae0a2ad4723a674e8b4869b42eaa947, type: 3}
+  - {fileID: 8300000, guid: 14007df919c75944bb01d79df899255d, type: 3}
 --- !u!114 &-8979948972341577083
 MonoBehaviour:
   m_ObjectHideFlags: 0

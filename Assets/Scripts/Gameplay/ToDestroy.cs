@@ -21,11 +21,13 @@ public class ToDestroy : MonoBehaviour{
 
     AudioSource clicked;
 
-    public AudioClip variety;
+    public AudioClip [] variety = new AudioClip[2];
 
     void Start(){
 
         clicked = GetComponent<AudioSource>();
+
+        clicked.PlayOneShot(variety[1]);
 
         moveableObject.Add(this);
         target = transform.position;
@@ -60,7 +62,7 @@ public class ToDestroy : MonoBehaviour{
 
             gameObject.GetComponent<SpriteRenderer>().color = Color.green;
 
-            clicked.PlayOneShot(variety);
+            clicked.PlayOneShot(variety[0]);
 
         }
         else{

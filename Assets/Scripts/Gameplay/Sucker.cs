@@ -10,6 +10,8 @@ public class Sucker : MonoBehaviour
 
    [SerializeField] float health, maxHealth = 100;
 
+   [SerializeField] private GameObject substitute;
+
     public Slider slider;
 
     public float wait;
@@ -20,7 +22,7 @@ public class Sucker : MonoBehaviour
 
     AudioSource clicked;
 
-    public AudioClip[]variety = new AudioClip[2];
+    public AudioClip variety;
 
     private void Start()
     {
@@ -44,7 +46,9 @@ public class Sucker : MonoBehaviour
         if (health <= 0)
         {
 
-            StartCoroutine(Vanished());
+            Instantiate(substitute, transform.position, transform.rotation);
+
+            Destroy(gameObject);
 
         }
 
@@ -65,7 +69,12 @@ public class Sucker : MonoBehaviour
                 //print("NOT MOVING");
                 TakeDamage(10f);
 
-                clicked.PlayOneShot(variety[0]);
+                if (health > 10)
+                {
+
+                    clicked.PlayOneShot(variety);
+
+                }
 
             }
             else
@@ -94,17 +103,6 @@ public class Sucker : MonoBehaviour
         }
 
         StartCoroutine(Draining(wait));
-
-    }
-
-    IEnumerator Vanished()
-    {
-
-        clicked.PlayOneShot(variety[1]);
-
-        yield return new WaitForSeconds(0.1f);
-
-        Destroy(gameObject);
 
     }
 
