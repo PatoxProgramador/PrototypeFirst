@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Next : MonoBehaviour
 {
@@ -14,8 +15,12 @@ public class Next : MonoBehaviour
 
     public AudioSource[] party = new AudioSource[2];
 
+    public GameObject skip;
+
     void Start()
     {
+
+        skip.SetActive(false);
 
         dJ = GameObject.FindGameObjectWithTag("Music");
 
@@ -37,6 +42,13 @@ public class Next : MonoBehaviour
     {
 
         yield return new WaitForSeconds(time);
+
+        skip.SetActive(true);
+
+    }
+
+    public void Pass()
+    {
 
         SceneManager.LoadScene(sceneName);
 
