@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class Gun : MonoBehaviour
@@ -18,12 +19,17 @@ public class Gun : MonoBehaviour
 
     public AudioClip variety;
 
+    public Image a;
+
     void Start()
     {
+
+        a.fillAmount = 0.0f;
 
         available = false;
 
         StartCoroutine(Fired(time));
+        StartCoroutine(Shoot());
 
     }
 
@@ -38,6 +44,8 @@ public class Gun : MonoBehaviour
             clicked.PlayOneShot(variety);
 
             available = false;
+
+            a.fillAmount = 0.0f;
 
         }
         
@@ -66,6 +74,8 @@ public class Gun : MonoBehaviour
 
                     available = false;
 
+                    a.fillAmount = 0.0f;
+
                 }
 
             }
@@ -73,6 +83,17 @@ public class Gun : MonoBehaviour
         }
 
         StartCoroutine(Fired(time));
+
+    }
+
+    IEnumerator Shoot()
+    {
+
+        a.fillAmount += 0.34f;
+
+        yield return new WaitForSeconds(0.25f);
+
+        StartCoroutine(Shoot());
 
     }
 

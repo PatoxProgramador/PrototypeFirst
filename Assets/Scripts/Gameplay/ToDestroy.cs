@@ -148,7 +148,12 @@ public class ToDestroy : MonoBehaviour{
     IEnumerator Freezer(GameObject a)
     {
 
-        freeze.enabled = false;
+        if(a != null)
+        {
+
+            freeze.enabled = false;
+
+        }
 
         yield return new WaitForSeconds(3f);
 
